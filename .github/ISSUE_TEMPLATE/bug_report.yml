@@ -1,0 +1,39 @@
+name: 问题反馈
+description: 报告 Buildploy 使用中遇到的问题
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先搜索已有 Issue。这里的内容公开可见，请勿提交凭据、个人信息或业务数据。
+  - type: textarea
+    id: summary
+    attributes:
+      label: 问题描述
+      description: 在什么场景下遇到了什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: "1. 打开……\n2. 点击……\n3. 看到……"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 发生时间与使用环境
+      description: 请注明时间及时区、浏览器/设备、Web/微信/Android 等目标端。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏后的错误与截图
+      description: 可附不含凭据的会话或轮次标识；请勿提供私密链接。

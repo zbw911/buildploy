@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 阅读使用文档
+    url: https://github.com/zbw911/buildploy/tree/main/docs
+    about: 提交前可先查看快速入门与常见问题。
