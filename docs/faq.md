@@ -6,6 +6,12 @@
 - [工作台](https://code.buildploy.com/)：实际构建、预览和交付应用。
 - [本仓库](https://github.com/zbw911/buildploy)：公开使用文档、问题反馈与功能建议。
 
+## 为什么不能直接注册？如何申请开通？
+
+由于资源有限，Buildploy 暂未开放公开注册，目前采用白名单机制。如需开通体验，请发送邮件至 [zbw911@qq.com](mailto:zbw911@qq.com)，或通过 [GitHub Issue](https://github.com/zbw911/buildploy/issues/new/choose) 联系作者。已开通用户可正常登录。
+
+白名单内的新手机号验证通过后可完成注册。申请所需手机号请通过邮件沟通，不要公开填写在 Issue 中。
+
 ## 可以从这里下载平台源码或自部署吗？
 
 本仓库是文档与反馈中心，不提供平台完整源码或自部署安装包。请使用在线工作台。

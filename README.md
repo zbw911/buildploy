@@ -16,6 +16,10 @@
 
 ## 开始使用
 
+由于资源有限，Buildploy 暂未开放公开注册，目前采用白名单机制。如需开通体验，请发送邮件至 [zbw911@qq.com](mailto:zbw911@qq.com)，或通过 [GitHub Issue](https://github.com/zbw911/buildploy/issues/new/choose) 联系作者。已开通用户可正常登录。
+
+申请所需手机号请通过邮件沟通，不要公开填写在 Issue 中。
+
 1. 打开[工作台](https://code.buildploy.com/)，按页面提示登录。
 2. 按照[快速入门](docs/quick-start.md)，从一个小需求开始构建。
 3. 运行预览并实际验证关键操作，再查看交付结果。

@@ -4,7 +4,9 @@
 
 ## 1. 进入工作台
 
-打开 <https://code.buildploy.com/>，按页面提示完成登录，创建或打开你有权限访问的项目。若账号或访问遇到问题，可在 Issue 中说明现象，请勿公开账号凭据。
+由于资源有限，Buildploy 暂未开放公开注册，目前采用白名单机制。如需开通体验，请发送邮件至 [zbw911@qq.com](mailto:zbw911@qq.com)，或通过 [GitHub Issue](https://github.com/zbw911/buildploy/issues/new/choose) 联系作者。已开通用户可正常登录。
+
+申请所需手机号请通过邮件沟通，不要公开填写在 Issue 中。开通后，打开 <https://code.buildploy.com/>，使用手机号验证码登录；白名单内的新手机号验证通过后可完成注册。随后创建或打开你有权限访问的项目。
 
 ## 2. 描述一个小需求
 
