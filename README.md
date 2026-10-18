@@ -41,6 +41,7 @@
 
 - [文档目录](docs/README.md)
 - [快速入门](docs/quick-start.md)
+- [模型及资源自主接入](docs/model-and-resource-access.md)
 - [常见问题](docs/faq.md)
 - [反馈与文档贡献指南](CONTRIBUTING.md)
 - [查看已有 Issues](https://github.com/zbw911/buildploy/issues)
