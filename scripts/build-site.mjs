@@ -7,6 +7,7 @@ import { renderPage } from '../website/template.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const output = resolve(root, 'dist');
 const repository = 'https://github.com/zbw911/buildploy';
+const docsDirectory = 'docs';
 const orderedSources = [
   'README.md', 'docs/README.md', 'docs/architecture.md', 'docs/features.md',
   'docs/showcase.md', 'docs/mobile-preview.md', 'docs/desktop.md', 'docs/enterprise.md',
@@ -47,40 +48,60 @@ for (const sourcePath of orderedSources) {
   const title = inlinePlain(parser.parseInline(titleToken.text));
   const descriptionToken = tokens.find(token => token.type === 'paragraph');
   const description = descriptionToken ? plain(parser.parseInline(descriptionToken.text)).slice(0, 160) : title;
-  pages.push({ sourcePath, outputPath: htmlPath(sourcePath), title, description, contentHtml: parser.parser(tokens), headings: headingEntries });
+  pages.push({ sourcePath, outputPath: posix.join(docsDirectory, htmlPath(sourcePath)), title, description, contentHtml: parser.parser(tokens), headings: headingEntries });
 }
 
 const sourceMap = new Map(pages.map(page => [page.sourcePath, page]));
+function sameSiteLink(href) {
+  if (!href.startsWith('https://www.buildploy.com/')) return null;
+  const url = new URL(href);
+  if (url.origin !== 'https://www.buildploy.com') return null;
+  if (url.pathname === '/') return { destination: 'index.html', suffix: url.search + url.hash };
+  if (url.pathname !== '/docs' && !url.pathname.startsWith('/docs/')) return null;
+  let destination = url.pathname.slice(1);
+  if (destination === 'docs' || destination.endsWith('/')) destination += destination.endsWith('/') ? 'index.html' : '/index.html';
+  return { destination, suffix: url.search + url.hash };
+}
 function convertContentLinks(html, page) {
   return html.replace(/\b(href|src)=("([^"]*)"|'([^']*)')/g, (whole, attribute, quoted, double, single) => {
     const href = decodeEntities(double ?? single);
-    if (!href || external(href) || href.startsWith('#') || href.startsWith('?')) return whole;
-    const match = href.match(/^([^?#]*)([?#].*)?$/);
-    const path = decodeURIComponent(decodeEntities(match[1]));
-    const suffix = match[2] || '';
-    const sourceTarget = posix.normalize(path.startsWith('/') ? path.slice(1) : posix.join(posix.dirname(page.sourcePath), path));
-    if (sourceTarget.startsWith('../')) throw Error(page.sourcePath + ': link leaves public site: ' + href);
-    const destination = sourceMap.get(sourceTarget)?.outputPath || sourceTarget;
+    if (!href || href.startsWith('#') || href.startsWith('?')) return whole;
+    const siteLink = sameSiteLink(href);
+    if (external(href) && !siteLink) return whole;
+    let destination, suffix;
+    if (siteLink) ({ destination, suffix } = siteLink);
+    else {
+      const match = href.match(/^([^?#]*)([?#].*)?$/);
+      const path = decodeURIComponent(decodeEntities(match[1]));
+      suffix = match[2] || '';
+      const sourceTarget = posix.normalize(path.startsWith('/') ? path.slice(1) : posix.join(posix.dirname(page.sourcePath), path));
+      if (sourceTarget.startsWith('../')) throw Error(page.sourcePath + ': link leaves public site: ' + href);
+      destination = sourceMap.get(sourceTarget)?.outputPath || posix.join(docsDirectory, sourceTarget);
+    }
     const converted = relativeHref(page.outputPath, destination) + suffix;
     return attribute + '="' + converted.replaceAll('&', '&amp;').replaceAll('"', '&quot;') + '"';
   });
 }
 
+const website = resolve(root, 'website');
+const home = resolve(website, 'home');
+await readFile(resolve(home, 'index.html'));
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
-await cp(resolve(root, 'assets'), resolve(output, 'assets'), { recursive: true });
-const website = resolve(root, 'website');
-await mkdir(resolve(output, 'site-assets'), { recursive: true });
+await cp(home, output, { recursive: true });
+await cp(resolve(root, 'assets'), resolve(output, docsDirectory, 'assets'), { recursive: true });
+await mkdir(resolve(output, docsDirectory, 'site-assets'), { recursive: true });
 for (const entry of await readdir(website, { withFileTypes: true })) {
   if (entry.isFile() && ['.css', '.js', '.svg', '.png', '.ico', '.webp', '.woff2'].includes(extname(entry.name))) {
-    await cp(resolve(website, entry.name), resolve(output, 'site-assets', entry.name));
+    await cp(resolve(website, entry.name), resolve(output, docsDirectory, 'site-assets', entry.name));
   }
 }
 for (const original of pages) {
   const page = {
     ...original,
-    rootHref: relativeHref(original.outputPath, 'index.html'),
-    assetBase: relativeHref(original.outputPath, 'site-assets') + '/',
+    rootHref: relativeHref(original.outputPath, posix.join(docsDirectory, 'index.html')),
+    siteRootHref: relativeHref(original.outputPath, 'index.html'),
+    assetBase: relativeHref(original.outputPath, posix.join(docsDirectory, 'site-assets')) + '/',
     sourceUrl: repository + '/blob/main/' + original.sourcePath,
   };
   const navigation = pages.map(item => ({
@@ -92,12 +113,13 @@ for (const original of pages) {
   await mkdir(dirname(target), { recursive: true });
   await writeFile(target, html);
 }
-await writeFile(resolve(output, 'search-index.json'), JSON.stringify(pages.map(page => ({
-  title: page.title, path: page.outputPath, sourcePath: page.sourcePath, text: plain(page.contentHtml),
+await writeFile(resolve(output, docsDirectory, 'search-index.json'), JSON.stringify(pages.map(page => ({
+  title: page.title, path: posix.relative(docsDirectory, page.outputPath), sourcePath: page.sourcePath, text: plain(page.contentHtml),
 }))));
 
 // Validate final HTML so template navigation and raw Markdown HTML share the same check.
 const htmlByPath = new Map(await Promise.all(pages.map(async page => [page.outputPath, await readFile(resolve(output, page.outputPath), 'utf8')])));
+htmlByPath.set('index.html', await readFile(resolve(output, 'index.html'), 'utf8'));
 const anchorByPath = new Map([...htmlByPath].map(([path, html]) => [path, new Set([...html.matchAll(/\bid=(?:"([^"]*)"|'([^']*)')/g)].map(match => decodeEntities(match[1] ?? match[2])))]));
 let checkedReferences = 0;
 for (const [path, html] of htmlByPath) {
@@ -117,4 +139,4 @@ for (const [path, html] of htmlByPath) {
     checkedReferences++;
   }
 }
-console.log(JSON.stringify({ pages: pages.length, checkedReferences, output: 'dist', subdirectorySafe: true }));
+console.log(JSON.stringify({ pages: htmlByPath.size, documentPages: pages.length, checkedReferences, output: 'dist', homepage: 'index.html', docsDirectory, subdirectorySafe: true }));

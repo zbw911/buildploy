@@ -1,4 +1,4 @@
-name: 发布文档站到 ECS
+name: 发布官网与文档到 ECS
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - name: Build and verify documentation
+      - name: Build and verify website and documentation
         run: |
           npm ci
           npm run build
@@ -78,21 +78,21 @@ jobs:
           scp -P "$docs_port" "${docs_ssh_options[@]}" "$docs_archive" "$DOCS_ECS_USER@$docs_scp_host:$docs_remote_archive"
           ssh -p "$docs_port" "${docs_ssh_options[@]}" "$docs_target" "python3 '$DOCS_DEPLOY_ROOT/bin/deploy-site.py' --root '$DOCS_DEPLOY_ROOT' --archive '$docs_remote_archive' --source-commit '$GITHUB_SHA'"
           ssh -p "$docs_port" "${docs_ssh_options[@]}" "$docs_target" "rm -f -- '$docs_remote_archive'"
-      - name: Verify live documentation
+      - name: Verify live website
         env:
-          DOCS_PUBLIC_URL: ${{ vars.DOCS_PUBLIC_URL || 'https://www.buildploy.com/docs/' }}
+          SITE_PUBLIC_URL: ${{ vars.SITE_PUBLIC_URL || 'https://www.buildploy.com/' }}
         run: |
           python3 - <<'PYTHON'
           import json, os, time, urllib.request
           from urllib.parse import urljoin
-          url = urljoin(os.environ['DOCS_PUBLIC_URL'].rstrip('/') + '/', 'site-manifest.json')
+          url = urljoin(os.environ['SITE_PUBLIC_URL'].rstrip('/') + '/', 'site-manifest.json')
           for attempt in range(6):
               try:
                   with urllib.request.urlopen(url, timeout=20) as response:
                       manifest = json.load(response)
                   if manifest.get('sourceCommit') != os.environ['GITHUB_SHA']:
                       raise RuntimeError('The public site is serving another source version.')
-                  print('Verified live documentation source:', manifest['sourceCommit'])
+                  print('Verified live website source:', manifest['sourceCommit'])
                   break
               except Exception:
                   if attempt == 5:
