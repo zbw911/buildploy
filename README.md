@@ -6,9 +6,9 @@
 
 [进入工作台](https://code.buildploy.com/) · [访问官网](https://www.buildploy.com/) · [快速入门](docs/quick-start.md) · [反馈问题](https://github.com/zbw911/buildploy/issues/new/choose)
 
-[![Buildploy Studio：AI Builder 创建微信小程序并在平台内预览](assets/screenshots/builder-miniapp-system.png)](docs/showcase.md#ai-builder-真实创建的小程序)
+[![Buildploy Studio：AI Builder 编写的企业业务应用与设备申请界面](assets/screenshots/builder-enterprise-system.png)](docs/enterprise.md)
 
-*人工提出需求并补充指令，AI Builder 生成小程序工程、完成构建和平台游客预览，并实际验证批准申请后进入“待交付”；验收范围见[真实案例](docs/showcase.md#ai-builder-真实创建的小程序)。*
+*企业案例业务源码由产品内 AI Builder 编写；人工完成企业模板初始化、账号与私有运行配置，以及运行验收。[查看真实企业案例 →](docs/enterprise.md)*
 
 ## 从需求到应用，在一处连起来
 
@@ -31,14 +31,14 @@
 | --- | --- |
 | [整体架构](docs/architecture.md) | 工作台、AI、项目工程、业务资源与交付目标如何连接。 |
 | [功能全景](docs/features.md) | 从需求表达、协作开发到运行验证和交付的完整路径。 |
-| [核心功能 UI](docs/showcase.md) | 查看 AI Builder 真实创建的小程序，以及工作台、业务流程、数据与交付入口。 |
+| [核心功能 UI](docs/showcase.md) | 查看 AI Builder 真实创建的企业应用和小程序，以及工作台、业务流程、数据与交付入口。 |
 | [小程序与 Android 预览](docs/mobile-preview.md) | 真实目标端中的应用界面、页面交互与状态变化。 |
 | [桌面版支持](docs/desktop.md) | Windows 客户端、本地 Git 工程、工具检测与原生目标端验证。 |
 | [企业应用与 AI 协作](docs/enterprise.md) | 用图解和案例了解 AI 如何连接企业数据、业务工具、权限和人工流程。 |
 
 ## 小程序与 Android，看见真实运行效果
 
-让产品内 AI Builder 创建“拾序工作台”，生成微信原生小程序与 Android 原生工程，并在真实目标端检查业务待办、详情与状态处理。
+让产品内 AI Builder 创建“某某工作台”，生成微信原生小程序与 Android 原生工程，并在真实目标端检查业务待办、详情与状态处理。
 
 <table>
 <tr><th>微信小程序</th><th>Android 应用</th></tr>
@@ -49,11 +49,11 @@
 
 ## 让 AI 进入企业的日常工作
 
-AI Builder 帮助团队构建和扩展应用，应用内 Agent 帮助员工推进业务任务。销售分析、申请办理等场景可以复用已有的企业工作台底座，将自然语言目标接入已授权的数据和业务操作。
+AI Builder 帮助团队编写企业业务应用，应用内业务助手帮助员工查询和办理业务。在电脑更换案例中，员工用自然语言提出需求，模型查询设备信息、创建一条申请，并给出对应业务记录入口。
 
-[![企业业务助手：业务目标、授权工具与业务记录在同一工作台衔接](assets/screenshots/enterprise-assistant.png)](docs/enterprise.md)
+[![企业业务助手：匿名化后真实模型只读查询本人设备](assets/screenshots/builder-enterprise-assistant.png)](docs/enterprise.md)
 
-*企业应用组件与示例会话。[查看企业 AI 化架构与案例 →](docs/enterprise.md)*
+*已实测设备查询、单条申请创建与对应记录入口；主管页面审批已进入待交付。改名后只读查询并重新截图，保留原申请。业务源码由产品内 AI Builder 编写，人工完成企业模板初始化、账号与私有运行配置及验收。[查看企业 AI 化架构与真实案例 →](docs/enterprise.md)*
 
 ## 开始体验
 
