@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1480" viewBox="0 0 1200 1480" role="img" aria-labelledby="title desc">
+<title id="title">Buildploy 企业应用架构</title><desc id="desc">AI Builder 帮助团队建设应用、业务接口和能力；员工在应用内提出目标，Agent 调用受权限约束的业务工具，连接数据和业务状态，再通过结果、记录和人工接力推进工作。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a8c8"/></marker></defs>
+<style>text{font-family:Noto Sans CJK SC,Noto Sans SC,Microsoft YaHei,sans-serif}.eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;fill:#3861d9}.title{font-size:34px;font-weight:700;fill:#17233d}.section{font-size:22px;font-weight:700;fill:#17233d}.label{font-size:22px;font-weight:700;fill:#17233d}.body{font-size:18px;fill:#576880}.small{font-size:16px;fill:#66768d}.line{fill:none;stroke:#94a8c8;stroke-width:2;marker-end:url(#arrow);stroke-linejoin:round}.blue{fill:#345fe6}.teal{fill:#168a8a}.purple{fill:#6157c7}.white{fill:#fff}</style>
+<rect width="1200" height="1480" rx="20" fill="#fff"/>
+<text x="50" y="48" class="eyebrow" >BUILDPLOY / ENTERPRISE APPLICATIONS</text>
+<text x="50" y="96" class="title" >让 AI 进入企业应用，连接真实业务</text>
+<text x="50" y="130" class="body" >建设业务应用与使用业务助手相互衔接，把企业规则、数据和操作带进同一条工作路径。</text>
+<text x="50" y="184" class="section" >01  建设侧：把业务规则做成可使用、可扩展的应用</text>
+<rect id="builder" x="50" y="210" width="330" height="158" rx="16" fill="#eef3ff" stroke="#dce5f1"/>
+<text x="72" y="248" class="label" data-box="builder" >AI Builder × 开发团队</text>
+<text x="72" y="284" class="body" data-box="builder" >实现页面、业务接口与流程</text>
+<text x="72" y="313" class="body" data-box="builder" >整理业务能力与调用工具</text>
+<text x="72" y="342" class="body" data-box="builder" >连接企业数据，按需扩展接口</text>
+<rect id="application" x="435" y="210" width="330" height="158" rx="16" fill="#f3efff" stroke="#dce5f1"/>
+<text x="457" y="248" class="label" data-box="application" >企业应用与业务助手</text>
+<text x="457" y="284" class="body" data-box="application" >业务页面 + 应用内 Agent</text>
+<text x="457" y="313" class="body" data-box="application" >统一业务接口与权限</text>
+<text x="457" y="342" class="body" data-box="application" >可编辑源码，持续扩展业务</text>
+<rect id="delivery" x="820" y="210" width="330" height="158" rx="16" fill="#ecf8f7" stroke="#dce5f1"/>
+<text x="842" y="248" class="label" data-box="delivery" >固定版本交付</text>
+<text x="842" y="284" class="body" data-box="delivery" >页面、流程与 Skill 一起交付</text>
+<text x="842" y="313" class="body" data-box="delivery" >云端服务 / 企业私有化部署</text>
+<text x="842" y="342" class="body" data-box="delivery" >配套模型、执行与业务资源</text>
+<path d="M 380 289 H 435" class="line"/>
+<path d="M 765 289 H 820" class="line"/>
+<path d="M 600 368 V 405" class="line"/>
+<text x="50" y="440" class="section" >02  使用侧：员工围绕业务目标，与应用内 Agent 协作</text>
+<rect id="goal" x="50" y="468" width="1100" height="92" rx="16" fill="#f6f8ff" stroke="#dce5f1"/>
+<text x="76" y="505" class="label" data-box="goal" >员工提出目标</text>
+<text x="295" y="505" class="body" data-box="goal" >“分析本周销售，定位异常”  /  “查询我的电脑，并发起更换申请”</text>
+<text x="76" y="539" class="small" data-box="goal" >自然语言目标与当前业务上下文，成为应用中的操作入口。</text>
+<path d="M 600 560 V 595" class="line"/>
+<rect id="agent" x="50" y="595" width="1100" height="174" rx="16" fill="#f3efff" stroke="#dfd8f6"/>
+<text x="78" y="635" class="label" data-box="agent" >应用内 Agent</text>
+<text x="78" y="667" class="body" data-box="agent" >围绕当前目标和已授权能力选择操作，在同一会话里展示进展。</text>
+<rect id="understand" x="78" y="691" width="310" height="51" rx="12" fill="#fff" stroke="#e6e0f6"/>
+<text x="233.0" y="724" class="body" data-box="understand" text-anchor="middle">理解目标与上下文</text>
+<rect id="skills" x="445" y="691" width="310" height="51" rx="12" fill="#fff" stroke="#e6e0f6"/>
+<text x="600.0" y="724" class="body" data-box="skills" text-anchor="middle">按需选择业务能力</text>
+<rect id="tools" x="812" y="691" width="310" height="51" rx="12" fill="#fff" stroke="#e6e0f6"/>
+<text x="967.0" y="724" class="body" data-box="tools" text-anchor="middle">编排工具与展示进展</text>
+<path d="M 600 769 V 806" class="line"/>
+<rect id="business" x="50" y="806" width="1100" height="128" rx="16" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="78" y="845" class="label" data-box="business" >受权限约束的业务接口与工作流</text>
+<text x="78" y="879" class="body" data-box="business" >按当前员工身份和数据范围查询、更新与办理申请，企业规则由业务服务校验。</text>
+<text x="78" y="908" class="small" data-box="business" >Agent 与人工操作共用业务权限；可复用已有接口，也可按业务需要建设新能力。</text>
+<path d="M 600 934 V 961 H 220 V 985" class="line"/>
+<path d="M 600 961 V 985" class="line"/>
+<path d="M 600 961 H 980 V 985" class="line"/>
+<rect id="data" x="50" y="985" width="340" height="92" rx="16" fill="#fff" stroke="#dce5f1"/>
+<text x="220" y="1022" class="label" data-box="data" text-anchor="middle">企业数据</text>
+<text x="220" y="1054" class="small" data-box="data" text-anchor="middle">订单、设备、成员与附件</text>
+<rect id="systems" x="430" y="985" width="340" height="92" rx="16" fill="#fff" stroke="#dce5f1"/>
+<text x="600" y="1022" class="label" data-box="systems" text-anchor="middle">已接入的业务系统</text>
+<text x="600" y="1054" class="small" data-box="systems" text-anchor="middle">已有接口与企业自建应用</text>
+<rect id="state" x="810" y="985" width="340" height="92" rx="16" fill="#fff" stroke="#dce5f1"/>
+<text x="980" y="1022" class="label" data-box="state" text-anchor="middle">业务状态</text>
+<text x="980" y="1054" class="small" data-box="state" text-anchor="middle">申请、审批、交接与审计</text>
+<path d="M 220 1077 V 1104 H 600 V 1130" class="line"/>
+<path d="M 600 1077 V 1130" class="line"/>
+<path d="M 980 1077 V 1104 H 600" class="line"/>
+<rect id="result" x="50" y="1130" width="1100" height="128" rx="16" fill="#eef6ff" stroke="#d9e8f8"/>
+<text x="78" y="1170" class="label" data-box="result" >返回可核对的结果，接上下一步工作</text>
+<text x="78" y="1205" class="body" data-box="result" >分析与业务记录  ·  申请编号与待办  ·  有权限的人继续审批或接手</text>
+<text x="78" y="1235" class="small" data-box="result" >会话保留处理进展，业务记录与实际状态定义是否办结。</text>
+<rect id="foundation" x="50" y="1302" width="1100" height="113" rx="16" fill="#f7f9fc" stroke="#e0e7f1"/>
+<text x="78" y="1337" class="label" data-box="foundation" >贯穿始终的企业底座</text>
+<text x="78" y="1380" class="body" data-box="foundation" >登录与成员部门</text>
+<text x="350" y="1380" class="body" data-box="foundation" >角色与数据范围</text>
+<text x="620" y="1380" class="body" data-box="foundation" >任务 · 消息 · 附件</text>
+<text x="897" y="1380" class="body" data-box="foundation" >会话与业务审计</text>
+<text x="50" y="1450" class="small" >企业应用按业务需求扩展；模型、执行、存储与网络按云端或私有化部署方案配套。</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100" role="img" aria-labelledby="title desc">
+<title id="title">Buildploy 功能全景</title><desc id="desc">沿说明需求、协作构建、连接业务、验证效果、交付迭代五个阶段组织功能，通过真实工程、模型资源、多端目标、Windows 桌面、团队治理与企业应用支撑持续迭代，平台支持云端服务与企业私有化部署。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a8c8"/></marker></defs>
+<style>text{font-family:Noto Sans CJK SC, Noto Sans SC, Microsoft YaHei, sans-serif;}.eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;fill:#3861d9}.title{font-size:34px;font-weight:700;fill:#17233d}.label{font-size:22px;font-weight:700;fill:#17233d}.body{font-size:17px;fill:#576880}.small{font-size:15px;fill:#66768d}.line{fill:none;stroke:#94a8c8;stroke-width:2;marker-end:url(#arrow);stroke-linejoin:round}.muted{fill:#78879d}.white{fill:white}</style>
+<rect width="1200" height="1100" rx="20" fill="#fff"/>
+
+<text x="50" y="48" class="eyebrow" >BUILDPLOY / CAPABILITY MAP</text>
+<text x="50" y="96" class="title" >从一句需求，到可验证的应用</text>
+<text x="50" y="126" class="body" >以小需求开始，在同一项目中逐步连接界面、数据和业务。</text>
+<rect x="50" y="181" width="208" height="422" rx="16" fill="#fff" stroke="#dde5f0"/>
+<path d="M 66 181 H 242 Q 258 181 258 197 V 274 H 50 V 197 Q 50 181 66 181 Z" fill="#eef3ff"/>
+<circle cx="86" cy="215" r="17" fill="#345fe6"/>
+<text x="86" y="221" class="small" text-anchor="middle" style="fill:#fff;font-weight:700">01</text>
+<text x="70" y="253" class="label" >说明需求</text>
+<text x="70" y="311" class="small" >从业务目标开始</text>
+<circle cx="74" cy="355" r="3" fill="#345fe6"/>
+<text x="86" y="361" class="body" >描述使用者</text>
+<circle cx="74" cy="405" r="3" fill="#345fe6"/>
+<text x="86" y="411" class="body" >页面与关键操作</text>
+<circle cx="74" cy="455" r="3" fill="#345fe6"/>
+<text x="86" y="461" class="body" >数据与使用场景</text>
+<path d="M 70 497 H 238" stroke="#e8edf5"/>
+<text x="70" y="540" class="small" >带来的价值</text>
+<text x="70" y="573" class="body" style="fill:#345fe6;font-weight:700">把想法说清楚</text>
+<path d="M 258 228 H 273" class="line"/>
+<rect x="273" y="181" width="208" height="422" rx="16" fill="#fff" stroke="#dde5f0"/>
+<path d="M 289 181 H 465 Q 481 181 481 197 V 274 H 273 V 197 Q 273 181 289 181 Z" fill="#f3efff"/>
+<circle cx="309" cy="215" r="17" fill="#6157c7"/>
+<text x="309" y="221" class="small" text-anchor="middle" style="fill:#fff;font-weight:700">02</text>
+<text x="293" y="253" class="label" >协作构建</text>
+<text x="293" y="311" class="small" >AI 与人工共同推进</text>
+<circle cx="297" cy="355" r="3" fill="#6157c7"/>
+<text x="309" y="361" class="body" >AI 会话与工具</text>
+<circle cx="297" cy="405" r="3" fill="#6157c7"/>
+<text x="309" y="411" class="body" >源码编辑与终端</text>
+<circle cx="297" cy="455" r="3" fill="#6157c7"/>
+<text x="309" y="461" class="body" >资源树与版本历史</text>
+<path d="M 293 497 H 461" stroke="#e8edf5"/>
+<text x="293" y="540" class="small" >带来的价值</text>
+<text x="293" y="573" class="body" style="fill:#6157c7;font-weight:700">保留可维护源码</text>
+<path d="M 481 228 H 496" class="line"/>
+<rect x="496" y="181" width="208" height="422" rx="16" fill="#fff" stroke="#dde5f0"/>
+<path d="M 512 181 H 688 Q 704 181 704 197 V 274 H 496 V 197 Q 496 181 512 181 Z" fill="#ecf8f7"/>
+<circle cx="532" cy="215" r="17" fill="#168a8a"/>
+<text x="532" y="221" class="small" text-anchor="middle" style="fill:#fff;font-weight:700">03</text>
+<text x="516" y="253" class="label" >连接业务</text>
+<text x="516" y="311" class="small" >让页面接上业务</text>
+<circle cx="520" cy="355" r="3" fill="#168a8a"/>
+<text x="532" y="361" class="body" >Workflow 与 API</text>
+<circle cx="520" cy="405" r="3" fill="#168a8a"/>
+<text x="532" y="411" class="body" >源码派生流程图</text>
+<circle cx="520" cy="455" r="3" fill="#168a8a"/>
+<text x="532" y="461" class="body" >数据源与数据浏览</text>
+<path d="M 516 497 H 684" stroke="#e8edf5"/>
+<text x="516" y="540" class="small" >带来的价值</text>
+<text x="516" y="573" class="body" style="fill:#168a8a;font-weight:700">串联数据与处理</text>
+<path d="M 704 228 H 719" class="line"/>
+<rect x="719" y="181" width="208" height="422" rx="16" fill="#fff" stroke="#dde5f0"/>
+<path d="M 735 181 H 911 Q 927 181 927 197 V 274 H 719 V 197 Q 719 181 735 181 Z" fill="#eef6ff"/>
+<circle cx="755" cy="215" r="17" fill="#357fbd"/>
+<text x="755" y="221" class="small" text-anchor="middle" style="fill:#fff;font-weight:700">04</text>
+<text x="739" y="253" class="label" >验证效果</text>
+<text x="739" y="311" class="small" >根据真实结果改进</text>
+<circle cx="743" cy="355" r="3" fill="#357fbd"/>
+<text x="755" y="361" class="body" >检查与测试</text>
+<circle cx="743" cy="405" r="3" fill="#357fbd"/>
+<text x="755" y="411" class="body" >构建与交互预览</text>
+<circle cx="743" cy="455" r="3" fill="#357fbd"/>
+<text x="755" y="461" class="body" >日志、报告和产物</text>
+<path d="M 739 497 H 907" stroke="#e8edf5"/>
+<text x="739" y="540" class="small" >带来的价值</text>
+<text x="739" y="573" class="body" style="fill:#357fbd;font-weight:700">检查功能是否可用</text>
+<path d="M 927 228 H 942" class="line"/>
+<rect x="942" y="181" width="208" height="422" rx="16" fill="#fff" stroke="#dde5f0"/>
+<path d="M 958 181 H 1134 Q 1150 181 1150 197 V 274 H 942 V 197 Q 942 181 958 181 Z" fill="#f3efff"/>
+<circle cx="978" cy="215" r="17" fill="#6b59b3"/>
+<text x="978" y="221" class="small" text-anchor="middle" style="fill:#fff;font-weight:700">05</text>
+<text x="962" y="253" class="label" >交付迭代</text>
+<text x="962" y="311" class="small" >让成果进入使用</text>
+<circle cx="966" cy="355" r="3" fill="#6b59b3"/>
+<text x="978" y="361" class="body" >按目标配置交付</text>
+<circle cx="966" cy="405" r="3" fill="#6b59b3"/>
+<text x="978" y="411" class="body" >任务进度与产物</text>
+<circle cx="966" cy="455" r="3" fill="#6b59b3"/>
+<text x="978" y="461" class="body" >反馈与持续调整</text>
+<path d="M 962 497 H 1130" stroke="#e8edf5"/>
+<text x="962" y="540" class="small" >带来的价值</text>
+<text x="962" y="573" class="body" style="fill:#6b59b3;font-weight:700">从成果继续迭代</text>
+<rect x="50" y="651" width="1100" height="332" rx="18" fill="#f7f9fc" stroke="#e0e7f1"/>
+<text x="78" y="691" class="label" >贯穿整个项目的基础能力</text>
+<text x="78" y="738" class="body" style="fill:#253958;font-weight:700">真实工程</text>
+<text x="78" y="773" class="small" >Git 文件、版本与协作</text>
+<text x="442" y="738" class="body" style="fill:#253958;font-weight:700">模型与资源</text>
+<text x="442" y="773" class="small" >按需接入自有模型和业务资源</text>
+<text x="806" y="738" class="body" style="fill:#253958;font-weight:700">多端目标</text>
+<text x="806" y="773" class="small" >Web · 微信小程序 · Android</text>
+<text x="78" y="846" class="body" style="fill:#253958;font-weight:700">Windows 桌面</text>
+<text x="78" y="881" class="small" >本地工程 · 终端 · 原生工具</text>
+<text x="78" y="911" class="small" >Windows x64 · 内部试用</text>
+<text x="442" y="846" class="body" style="fill:#253958;font-weight:700">团队治理</text>
+<text x="442" y="881" class="small" >项目成员 · 角色权限 · 审计</text>
+<text x="442" y="911" class="small" >开发协作按项目授权</text>
+<text x="806" y="846" class="body" style="fill:#253958;font-weight:700">企业应用与业务助手</text>
+<text x="806" y="881" class="small" >业务工具 · 数据权限 · 业务助手</text>
+<text x="806" y="911" class="small" >任务 · 消息 · 附件</text>
+<rect x="78" y="937" width="1044" height="31" rx="8" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="94" y="959" class="body" style="fill:#167b7b;font-weight:700">部署选择</text>
+<text x="220" y="958" class="small" >云端服务 / 企业私有化部署；业务应用可在云端或企业内网运行</text>
+<text x="50" y="1033" class="small" >先验证关键操作，再确认交付结果；桌面接入与企业应用配置分别按实际环境准备。</text>
+</svg>

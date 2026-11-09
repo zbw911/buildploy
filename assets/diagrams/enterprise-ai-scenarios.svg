@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1270" viewBox="0 0 1200 1270" role="img" aria-labelledby="title desc">
+<title id="title">Buildploy 企业 AI 业务场景</title><desc id="desc">销售分析展示按授权范围取数与辅助分析；电脑更换展示 AI 查询设备、提交申请，再由主管审批、设备人员交付，结合待办、消息和业务记录跟踪结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a8c8"/></marker></defs>
+<style>text{font-family:Noto Sans CJK SC,Noto Sans SC,Microsoft YaHei,sans-serif}.eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;fill:#3861d9}.title{font-size:34px;font-weight:700;fill:#17233d}.section{font-size:22px;font-weight:700;fill:#17233d}.label{font-size:22px;font-weight:700;fill:#17233d}.body{font-size:18px;fill:#576880}.small{font-size:16px;fill:#66768d}.line{fill:none;stroke:#94a8c8;stroke-width:2;marker-end:url(#arrow);stroke-linejoin:round}.blue{fill:#345fe6}.teal{fill:#168a8a}.purple{fill:#6157c7}.white{fill:#fff}</style>
+<rect width="1200" height="1270" rx="20" fill="#fff"/>
+<text x="50" y="48" class="eyebrow" >BUILDPLOY / BUSINESS SCENARIOS</text>
+<text x="50" y="96" class="title" >同一个 AI 入口，承接分析与业务办理</text>
+<text x="50" y="130" class="body" >业务助手调用已发布的能力；分析有数据依据，办理有业务回执，审批与交付有人接力。</text>
+<rect id="sales-head" x="50" y="168" width="530" height="61" rx="16" fill="#eef3ff" stroke="#dce5f1"/>
+<text x="72" y="205" class="label" data-box="sales-head" >01  销售分析</text>
+<text x="300" y="205" class="small" data-box="sales-head" >把业务问题带进数据分析</text>
+<rect id="computer-head" x="620" y="168" width="530" height="61" rx="16" fill="#ecf8f7" stroke="#dce5f1"/>
+<text x="642" y="205" class="label" data-box="computer-head" >02  员工电脑更换</text>
+<text x="870" y="205" class="small" data-box="computer-head" >让 AI 办理与人工流程衔接</text>
+<rect id="sales-0" x="50" y="260" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="83" cy="292" r="14" fill="#345fe6"/>
+<text x="83" y="298" class="small" data-box="sales-0" text-anchor="middle" style="fill:#fff;font-weight:700">1</text>
+<text x="108" y="300" class="label" data-box="sales-0" >提出业务问题</text>
+<text x="72" y="333" class="body" data-box="sales-0" >“分析本周销售，看看退款异常。”</text>
+<text x="72" y="358" class="small" data-box="sales-0" >从员工自己的业务目标开始。</text>
+<path d="M 315 368 V 397" class="line"/>
+<rect id="computer-0" x="620" y="260" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="653" cy="292" r="14" fill="#168a8a"/>
+<text x="653" y="298" class="small" data-box="computer-0" text-anchor="middle" style="fill:#fff;font-weight:700">1</text>
+<text x="678" y="300" class="label" data-box="computer-0" >提出办理目标</text>
+<text x="642" y="333" class="body" data-box="computer-0" >“查询我的电脑，并发起更换申请。”</text>
+<text x="642" y="358" class="small" data-box="computer-0" >员工从业务助手进入办理过程。</text>
+<path d="M 885 368 V 397" class="line"/>
+<rect id="sales-1" x="50" y="397" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="83" cy="429" r="14" fill="#345fe6"/>
+<text x="83" y="435" class="small" data-box="sales-1" text-anchor="middle" style="fill:#fff;font-weight:700">2</text>
+<text x="108" y="437" class="label" data-box="sales-1" >查询授权范围的数据</text>
+<text x="72" y="470" class="body" data-box="sales-1" >读取销售统计、日期与部门范围。</text>
+<text x="72" y="495" class="small" data-box="sales-1" >业务接口按当前身份核验数据权限。</text>
+<path d="M 315 505 V 534" class="line"/>
+<rect id="computer-1" x="620" y="397" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="653" cy="429" r="14" fill="#168a8a"/>
+<text x="653" y="435" class="small" data-box="computer-1" text-anchor="middle" style="fill:#fff;font-weight:700">2</text>
+<text x="678" y="437" class="label" data-box="computer-1" >读取本人设备与要求</text>
+<text x="642" y="470" class="body" data-box="computer-1" >查询当前员工、设备和申请信息。</text>
+<text x="642" y="495" class="small" data-box="computer-1" >沿企业已声明的字段与规则准备办理。</text>
+<path d="M 885 505 V 534" class="line"/>
+<rect id="sales-2" x="50" y="534" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="83" cy="566" r="14" fill="#345fe6"/>
+<text x="83" y="572" class="small" data-box="sales-2" text-anchor="middle" style="fill:#fff;font-weight:700">3</text>
+<text x="108" y="574" class="label" data-box="sales-2" >基于数据计算与解释</text>
+<text x="72" y="607" class="body" data-box="sales-2" >组合已发布的统计与分析能力。</text>
+<text x="72" y="632" class="small" data-box="sales-2" >区分观测事实、可能原因与核查建议。</text>
+<path d="M 315 642 V 671" class="line"/>
+<rect id="computer-2" x="620" y="534" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="653" cy="566" r="14" fill="#168a8a"/>
+<text x="653" y="572" class="small" data-box="computer-2" text-anchor="middle" style="fill:#fff;font-weight:700">3</text>
+<text x="678" y="574" class="label" data-box="computer-2" >提交或补充申请</text>
+<text x="642" y="607" class="body" data-box="computer-2" >通过受权限约束的业务工具写入。</text>
+<text x="642" y="632" class="small" data-box="computer-2" >返回申请编号，可打开对应申请详情。</text>
+<path d="M 885 642 V 671" class="line"/>
+<rect id="sales-3" x="50" y="671" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="83" cy="703" r="14" fill="#345fe6"/>
+<text x="83" y="709" class="small" data-box="sales-3" text-anchor="middle" style="fill:#fff;font-weight:700">4</text>
+<text x="108" y="711" class="label" data-box="sales-3" >返回可复核的分析</text>
+<text x="72" y="744" class="body" data-box="sales-3" >展示统计依据、分析结论和建议。</text>
+<text x="72" y="769" class="small" data-box="sales-3" >回到销售看板，核对订单与数据明细。</text>
+<path d="M 315 779 V 808" class="line"/>
+<rect id="computer-3" x="620" y="671" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="653" cy="703" r="14" fill="#168a8a"/>
+<text x="653" y="709" class="small" data-box="computer-3" text-anchor="middle" style="fill:#fff;font-weight:700">4</text>
+<text x="678" y="711" class="label" data-box="computer-3" >由有权限的人审批</text>
+<text x="642" y="744" class="body" data-box="computer-3" >主管查看待办、材料和申请详情。</text>
+<text x="642" y="769" class="small" data-box="computer-3" >按业务规则批准、拒绝或要求补充。</text>
+<path d="M 885 779 V 808" class="line"/>
+<rect id="sales-4" x="50" y="808" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="83" cy="840" r="14" fill="#345fe6"/>
+<text x="83" y="846" class="small" data-box="sales-4" text-anchor="middle" style="fill:#fff;font-weight:700">5</text>
+<text x="108" y="848" class="label" data-box="sales-4" >支持业务人员继续判断</text>
+<text x="72" y="881" class="body" data-box="sales-4" >结合实际订单和业务背景核查。</text>
+<text x="72" y="906" class="small" data-box="sales-4" >让分析连接后续处理与业务决策。</text>
+<rect id="computer-4" x="620" y="808" width="530" height="108" rx="16" fill="#fff" stroke="#dce5f1"/>
+<circle cx="653" cy="840" r="14" fill="#168a8a"/>
+<text x="653" y="846" class="small" data-box="computer-4" text-anchor="middle" style="fill:#fff;font-weight:700">5</text>
+<text x="678" y="848" class="label" data-box="computer-4" >设备人员交付并更新状态</text>
+<text x="642" y="881" class="body" data-box="computer-4" >交接完成后，业务记录进入完成状态。</text>
+<text x="642" y="906" class="small" data-box="computer-4" >员工通过申请、消息和附件跟踪进展。</text>
+<rect id="sales-value" x="50" y="959" width="530" height="111" rx="16" fill="#eef3ff" stroke="#dce5f1"/>
+<text x="72" y="997" class="label" data-box="sales-value" >为企业带来的价值</text>
+<text x="72" y="1029" class="body" data-box="sales-value" >围绕业务问题获取分析与核查线索。</text>
+<text x="72" y="1057" class="small" data-box="sales-value" >查询范围、统计依据与结果可以核对。</text>
+<rect id="computer-value" x="620" y="959" width="530" height="111" rx="16" fill="#ecf8f7" stroke="#dce5f1"/>
+<text x="642" y="997" class="label" data-box="computer-value" >为企业带来的价值</text>
+<text x="642" y="1029" class="body" data-box="computer-value" >减少办理过程中的重复查找与填报。</text>
+<text x="642" y="1057" class="small" data-box="computer-value" >AI 提交、人工审批、业务状态清晰衔接。</text>
+<rect id="shared" x="50" y="1110" width="1100" height="99" rx="16" fill="#f7f9fc" stroke="#e0e7f1"/>
+<text x="78" y="1148" class="label" data-box="shared" >共同基础</text>
+<text x="250" y="1148" class="body" data-box="shared" >成员身份与数据权限  ·  业务能力与接口  ·  持久会话与过程记录</text>
+<text x="78" y="1180" class="small" data-box="shared" >在企业应用底座上增加业务模块、Skill 与工具，逐步扩展可处理的工作范围。</text>
+<text x="50" y="1247" class="small" >两条路径复用同一企业应用；业务工具受当前权限约束，业务办结以实际记录和状态为准。</text>
+</svg>

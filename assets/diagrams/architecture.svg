@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1280" viewBox="0 0 1200 1280" role="img" aria-labelledby="title desc">
+<title id="title">Buildploy 产品架构</title><desc id="desc">通过浏览器工作台或 Windows 桌面版进入 Studio，平台支持云端服务与企业私有化部署，围绕同一项目工程协作开发并交付应用；业务应用可在云端或企业内网独立运行。Windows 桌面版当前为内部试用。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94a8c8"/></marker></defs>
+<style>text{font-family:Noto Sans CJK SC, Noto Sans SC, Microsoft YaHei, sans-serif;}.eyebrow{font-size:15px;font-weight:700;letter-spacing:2px;fill:#3861d9}.title{font-size:34px;font-weight:700;fill:#17233d}.label{font-size:22px;font-weight:700;fill:#17233d}.body{font-size:17px;fill:#576880}.small{font-size:15px;fill:#66768d}.line{fill:none;stroke:#94a8c8;stroke-width:2;marker-end:url(#arrow);stroke-linejoin:round}.muted{fill:#78879d}.white{fill:white}</style>
+<rect width="1200" height="1280" rx="20" fill="#fff"/>
+<text x="50" y="48" class="eyebrow" >BUILDPLOY / PRODUCT ARCHITECTURE</text>
+<text x="50" y="96" class="title" >同一项目，连接需求、构建与交付</text>
+<text x="50" y="126" class="body" >浏览器与桌面连接同一工作台，AI、工程和企业业务持续协作。</text>
+<rect x="50" y="164" width="350" height="88" rx="16" fill="#eef3ff" stroke="#d9e3ff"/>
+<text x="74" y="201" class="label" >业务需求</text>
+<text x="74" y="231" class="body" >使用者 · 页面 · 数据 · 关键操作</text>
+<path d="M 225 252 V 292" class="line"/>
+<rect x="425" y="164" width="350" height="88" rx="16" fill="#f3efff" stroke="#e4dcfc"/>
+<text x="449" y="201" class="label" >模型服务</text>
+<text x="449" y="231" class="body" >平台模型 / 项目自带模型</text>
+<path d="M 600 252 V 292" class="line"/>
+<rect x="800" y="164" width="350" height="88" rx="16" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="824" y="201" class="label" >业务资源</text>
+<text x="824" y="231" class="body" >数据源 / 外部接口 / 交付凭据</text>
+<path d="M 975 252 V 292" class="line"/>
+<rect x="50" y="292" width="1100" height="344" rx="20" fill="#f6f8ff" stroke="#d5dffa"/>
+<text x="80" y="333" class="label" >Buildploy Studio</text>
+<rect x="630" y="307" width="490" height="34" rx="10" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="648" y="330" class="body" style="fill:#167b7b;font-weight:700">平台部署：云端服务 / 企业私有化部署</text>
+<rect x="80" y="354" width="510" height="70" rx="12" fill="#eef3ff" stroke="#d9e3ff"/>
+<text x="98" y="382" class="label" >浏览器工作台</text>
+<text x="98" y="409" class="small" >在线登录 · 项目协作 · 应用开发</text>
+<rect x="610" y="354" width="510" height="70" rx="12" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="628" y="382" class="label" >Windows 桌面版 · 内部试用</text>
+<text x="628" y="409" class="small" >本地 Git · 用户终端 · Android / 微信工具</text>
+<rect x="80" y="452" width="245" height="114" rx="12" fill="#fff" stroke="#e1e7f5"/>
+<rect x="80" y="467" width="4" height="23" rx="2" fill="#345fe6"/>
+<text x="98" y="489" class="label" >AI Builder</text>
+<text x="98" y="522" class="body" >需求与上下文</text>
+<text x="98" y="549" class="small" >工具执行与问题处理</text>
+<rect x="345" y="452" width="245" height="114" rx="12" fill="#fff" stroke="#e1e7f5"/>
+<rect x="345" y="467" width="4" height="23" rx="2" fill="#5764c7"/>
+<text x="363" y="489" class="label" >工程编辑</text>
+<text x="363" y="522" class="body" >资源树 / 源码 / 终端</text>
+<text x="363" y="549" class="small" >差异与历史</text>
+<rect x="610" y="452" width="245" height="114" rx="12" fill="#fff" stroke="#e1e7f5"/>
+<rect x="610" y="467" width="4" height="23" rx="2" fill="#168a8a"/>
+<text x="628" y="489" class="label" >业务逻辑与数据</text>
+<text x="628" y="522" class="body" >Workflow / API</text>
+<text x="628" y="549" class="small" >数据源与数据浏览</text>
+<rect x="875" y="452" width="245" height="114" rx="12" fill="#fff" stroke="#e1e7f5"/>
+<rect x="875" y="467" width="4" height="23" rx="2" fill="#357fbd"/>
+<text x="893" y="489" class="label" >预览与验证</text>
+<text x="893" y="522" class="body" >检查 / 测试 / 预览</text>
+<text x="893" y="549" class="small" >日志、报告与产物</text>
+<text x="80" y="605" class="small" >统一账号与项目权限；桌面按已绑定工程接入本地能力，AI 调度与构建使用受控执行环境。</text>
+<path d="M 315 636 V 694" class="line"/>
+<path d="M 885 636 V 694" class="line"/>
+<rect x="50" y="694" width="520" height="132" rx="16" fill="#fff" stroke="#d9e2f2"/>
+<rect x="630" y="694" width="520" height="132" rx="16" fill="#fff" stroke="#d9e2f2"/>
+<text x="76" y="733" class="label" >项目 Git 工程</text>
+<text x="76" y="765" class="body" >同一份源码 · 文件与版本 · 可持续迭代</text>
+<text x="76" y="795" class="small" >人工编辑和 AI 修改围绕同一项目推进</text>
+<text x="656" y="733" class="label" >应用执行与交付</text>
+<text x="656" y="765" class="body" >准备 → 检查 / 测试 → 构建 → 运行</text>
+<text x="656" y="795" class="small" >按应用声明、权限与目标环境组织操作</text>
+<path d="M 570 760 H 630" class="line"/>
+<path d="M 885 826 V 878 H 175 V 926" class="line"/>
+<path d="M 885 826 V 878 H 450 V 926" class="line"/>
+<path d="M 885 826 V 878 H 725 V 926" class="line"/>
+<path d="M 885 826 V 878 H 1000 V 926" class="line"/>
+<rect x="50" y="926" width="250" height="104" rx="16" fill="#eef3ff" stroke="#d9e3ff"/>
+<text x="175" y="968" class="label" text-anchor="middle">Web 应用</text>
+<text x="175" y="1001" class="small" text-anchor="middle">浏览器预览与发布</text>
+<rect x="325" y="926" width="250" height="104" rx="16" fill="#f3efff" stroke="#e4dcfc"/>
+<text x="450" y="968" class="label" text-anchor="middle">业务接口</text>
+<text x="450" y="1001" class="small" text-anchor="middle">业务处理与服务交付</text>
+<rect x="600" y="926" width="250" height="104" rx="16" fill="#ecf8f7" stroke="#d3ece8"/>
+<text x="725" y="968" class="label" text-anchor="middle">微信小程序</text>
+<text x="725" y="1001" class="small" text-anchor="middle">目标端预览与开发版上传</text>
+<rect x="875" y="926" width="250" height="104" rx="16" fill="#eef6ff" stroke="#d9e8f8"/>
+<text x="1000" y="968" class="label" text-anchor="middle">Android 应用</text>
+<text x="1000" y="1001" class="small" text-anchor="middle">目标端运行与 APK 交付</text>
+<rect x="50" y="1072" width="1100" height="132" rx="18" fill="#f7f9fc" stroke="#e0e7f1"/>
+<text x="78" y="1112" class="label" >企业使用：团队治理与业务助手</text>
+<text x="78" y="1150" class="body" >项目成员 · 角色权限 · 审计</text>
+<text x="78" y="1179" class="small" >开发协作保留明确的权限边界</text>
+<text x="630" y="1150" class="body" >业务工具 · 数据权限 · 应用内 Agent</text>
+<text x="630" y="1179" class="small" >固定应用包可在云端或企业内网独立运行</text>
+<text x="50" y="1247" class="small" >各端分别配置与验证；桌面首版为 Windows x64 内部试用，企业应用按业务需求配置与扩展。</text>
+</svg>
