@@ -4,7 +4,7 @@
 
 与 AI 一起构建 **Web、微信小程序与 Android 应用**，连接业务数据和处理流程，在对应目标端预览、验证与交付。企业还可以构建通过自然语言使用业务能力的企业应用，并按需选择 **云端服务或私有化部署**。
 
-[进入工作台](https://code.buildploy.com/) · [访问官网](https://www.buildploy.com/) · [快速入门](docs/quick-start.md) · [反馈问题](https://github.com/zbw911/buildploy/issues/new/choose)
+[在线文档](https://www.buildploy.com/docs/) · [进入工作台](https://code.buildploy.com/) · [访问官网](https://www.buildploy.com/) · [快速入门](docs/quick-start.md) · [反馈问题](https://github.com/zbw911/buildploy/issues/new/choose)
 
 [![Buildploy Studio：AI Builder 编写的企业业务应用与设备申请界面](assets/screenshots/builder-enterprise-system.png)](docs/enterprise.md)
 

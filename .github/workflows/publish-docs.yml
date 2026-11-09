@@ -1,0 +1,101 @@
+name: 发布文档站到 ECS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.md'
+      - 'docs/**'
+      - 'assets/**'
+      - 'website/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/publish-docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: documentation-ecs
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Build and verify documentation
+        run: |
+          npm ci
+          npm run build
+          python3 scripts/test-deploy-site.py
+          node scripts/package-site.mjs
+      - name: Deploy verified static files
+        env:
+          DOCS_ECS_HOST: ${{ secrets.DOCS_ECS_HOST }}
+          DOCS_ECS_PORT: ${{ secrets.DOCS_ECS_PORT }}
+          DOCS_ECS_USER: ${{ secrets.DOCS_ECS_USER }}
+          DOCS_ECS_SSH_KEY: ${{ secrets.DOCS_ECS_SSH_KEY }}
+          DOCS_ECS_KNOWN_HOSTS: ${{ secrets.DOCS_ECS_KNOWN_HOSTS }}
+          DOCS_DEPLOY_ROOT: ${{ vars.DOCS_DEPLOY_ROOT || '/opt/buildploy-docs' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for setting in DOCS_ECS_HOST DOCS_ECS_USER DOCS_ECS_SSH_KEY DOCS_ECS_KNOWN_HOSTS; do
+            if [[ -z "${!setting}" ]]; then
+              echo "Missing repository secret: $setting" >&2
+              exit 1
+            fi
+          done
+          docs_port="${DOCS_ECS_PORT:-22}"
+          [[ "$docs_port" =~ ^[0-9]+$ ]] && (( docs_port >= 1 && docs_port <= 65535 ))
+          [[ "$DOCS_ECS_HOST" =~ ^[A-Za-z0-9.:-]+$ ]]
+          [[ "$DOCS_ECS_USER" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
+          [[ "$DOCS_DEPLOY_ROOT" =~ ^/[A-Za-z0-9_./-]+$ && "$DOCS_DEPLOY_ROOT" != / && "/$DOCS_DEPLOY_ROOT/" != *'/../'* ]]
+          docs_key_dir="$(mktemp -d "$RUNNER_TEMP/docs-ssh.XXXXXX")"
+          trap 'rm -rf -- "$docs_key_dir"' EXIT
+          printf '%s\n' "$DOCS_ECS_SSH_KEY" > "$docs_key_dir/key"
+          printf '%s\n' "$DOCS_ECS_KNOWN_HOSTS" > "$docs_key_dir/known_hosts"
+          chmod 600 "$docs_key_dir/key" "$docs_key_dir/known_hosts"
+          docs_archive="$RUNNER_TEMP/buildploy-docs.tar.gz"
+          tar -C dist -czf "$docs_archive" .
+          chmod 600 "$docs_archive"
+          docs_remote_archive="/tmp/buildploy-docs-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${GITHUB_SHA:0:12}.tar.gz"
+          docs_target="$DOCS_ECS_USER@$DOCS_ECS_HOST"
+          docs_scp_host="$DOCS_ECS_HOST"
+          if [[ "$docs_scp_host" == *:* ]]; then docs_scp_host="[$docs_scp_host]"; fi
+          docs_ssh_options=(-i "$docs_key_dir/key" -o "UserKnownHostsFile=$docs_key_dir/known_hosts" -o StrictHostKeyChecking=yes -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=2)
+          scp -P "$docs_port" "${docs_ssh_options[@]}" "$docs_archive" "$DOCS_ECS_USER@$docs_scp_host:$docs_remote_archive"
+          ssh -p "$docs_port" "${docs_ssh_options[@]}" "$docs_target" "python3 '$DOCS_DEPLOY_ROOT/bin/deploy-site.py' --root '$DOCS_DEPLOY_ROOT' --archive '$docs_remote_archive' --source-commit '$GITHUB_SHA'"
+          ssh -p "$docs_port" "${docs_ssh_options[@]}" "$docs_target" "rm -f -- '$docs_remote_archive'"
+      - name: Verify live documentation
+        env:
+          DOCS_PUBLIC_URL: ${{ vars.DOCS_PUBLIC_URL || 'https://www.buildploy.com/docs/' }}
+        run: |
+          python3 - <<'PYTHON'
+          import json, os, time, urllib.request
+          from urllib.parse import urljoin
+          url = urljoin(os.environ['DOCS_PUBLIC_URL'].rstrip('/') + '/', 'site-manifest.json')
+          for attempt in range(6):
+              try:
+                  with urllib.request.urlopen(url, timeout=20) as response:
+                      manifest = json.load(response)
+                  if manifest.get('sourceCommit') != os.environ['GITHUB_SHA']:
+                      raise RuntimeError('The public site is serving another source version.')
+                  print('Verified live documentation source:', manifest['sourceCommit'])
+                  break
+              except Exception:
+                  if attempt == 5:
+                      raise
+                  time.sleep(5)
+          PYTHON

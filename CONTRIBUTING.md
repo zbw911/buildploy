@@ -18,3 +18,21 @@ Issue 是公开内容。请删除密码、Token、Cookie、数据库连接串、
 ## 修改文档
 
 修改现有相关文档，保持相对链接有效。PR 说明修改原因与核对依据；不提交凭据、内部部署细节或平台私有源码。
+
+## 文档站构建与发布
+
+仓库中的 Markdown 是正文的唯一来源。执行 `npm ci`、`npm run build`，可生成 `dist/` 静态站点；构建会检查站内链接、锚点和图片。使用本地静态 HTTP 服务预览 `dist/`，无需运行平台或业务服务。
+
+`main` 更新后，GitHub Actions 自动构建并发布文档站。维护者也可以进入[发布工作流](https://github.com/zbw911/buildploy/actions/workflows/publish-docs.yml)，选择 **Run workflow** 手动发布 `main` 当前版本。发布状态和错误原因在同一工作流查看。
+
+首次接入服务器时，维护者需要安装仓库中的 `scripts/deploy-site.py` 到独立部署目录的 `bin/`，并为专用发布账号配置该目录的写权限。仓库 Actions Secrets 使用以下名称；实际值仅在 GitHub 的 Secrets 中保存：
+
+| Secret | 用途 |
+| --- | --- |
+| `DOCS_ECS_HOST` | 目标服务器地址。 |
+| `DOCS_ECS_PORT` | SSH 端口，未设置时使用 22。 |
+| `DOCS_ECS_USER` | 仅负责文档目录的发布账号。 |
+| `DOCS_ECS_SSH_KEY` | 对应该账号的专用 SSH 私钥。 |
+| `DOCS_ECS_KNOWN_HOSTS` | 已通过可信连接核验的服务器公钥记录。 |
+
+可通过仓库变量 `DOCS_DEPLOY_ROOT` 指定独立部署目录，通过 `DOCS_PUBLIC_URL` 指定上线验证地址。工作流通过 SSH 上传构建产物，服务器核对源码提交及完整文件摘要后，原子切换 `current`，再检查公网入口实际提供的版本。构建或产物校验失败时保留现有版本；发布不涉及平台应用或数据库。

@@ -1,0 +1,11 @@
+{
+  "name": "buildploy-public-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-docs.mjs"
+  },
+  "dependencies": {
+    "marked": "14.0.0"
+  }
+}
