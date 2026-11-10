@@ -17,6 +17,7 @@ Buildploy 将 AI 协作、应用源码、业务数据、预览验证和交付连
 
 - [快速入门](quick-start.md)：描述需求、构建、预览、验证与交付。
 - [模型及资源自主接入](model-and-resource-access.md)：平台额度、自带模型、业务资源与交付凭据的配置及支持范围。
+- [微信小程序配置](wechat-miniapp-configuration.md)：配置 AppID、上传私钥、服务器出口 IP 白名单，以及按需接入业务微信登录。
 - [常见问题](faq.md)：产品入口、目标端、运行结果与反馈方式。
 
 ## 反馈与后续方向

@@ -47,4 +47,4 @@ AI Builder 创建 Kotlin / Jetpack Compose 工程并完成实际 APK 构建。�
 
 应用页按目标提供检查、测试、构建和运行入口，结合原操作的日志、产物与目标端画面核对结果。验证通过后，小程序可按配置上传微信开发版，Android 可交付 APK；目标端环境和能力分别验收。
 
-从需求开始构建，见[快速入门](quick-start.md)。本地工具接入见[桌面版支持](desktop.md)，凭据和资源配置见[模型及资源自主接入](model-and-resource-access.md)。
+从需求开始构建，见[快速入门](quick-start.md)。本地工具接入见[桌面版支持](desktop.md)，扫码预览、上传和登录配置见[微信小程序配置指南](wechat-miniapp-configuration.md)，其他凭据和资源见[模型及资源自主接入](model-and-resource-access.md)。

@@ -11,7 +11,7 @@ const docsDirectory = 'docs';
 const orderedSources = [
   'README.md', 'docs/README.md', 'docs/architecture.md', 'docs/features.md',
   'docs/showcase.md', 'docs/mobile-preview.md', 'docs/desktop.md', 'docs/enterprise.md',
-  'docs/ai-native.md', 'docs/quick-start.md', 'docs/model-and-resource-access.md',
+  'docs/ai-native.md', 'docs/quick-start.md', 'docs/model-and-resource-access.md', 'docs/wechat-miniapp-configuration.md',
   'docs/faq.md', 'docs/roadmap.md', 'CONTRIBUTING.md',
 ];
 const htmlPath = path => path === 'README.md' ? 'index.html'

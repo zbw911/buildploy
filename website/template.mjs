@@ -1,10 +1,10 @@
 const escape = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const groups = [
   ['了解 Buildploy', ['README.md', 'docs/architecture.md', 'docs/features.md', 'docs/showcase.md', 'docs/mobile-preview.md', 'docs/desktop.md', 'docs/enterprise.md', 'docs/ai-native.md']],
-  ['开始使用', ['docs/quick-start.md', 'docs/model-and-resource-access.md', 'docs/faq.md']],
+  ['开始使用', ['docs/quick-start.md', 'docs/model-and-resource-access.md', 'docs/wechat-miniapp-configuration.md', 'docs/faq.md']],
   ['参与和反馈', ['docs/roadmap.md', 'CONTRIBUTING.md', 'docs/README.md']],
 ];
-const labels = { 'README.md': '产品概览', 'docs/architecture.md': '整体架构', 'docs/features.md': '功能全景', 'docs/showcase.md': '核心功能 UI', 'docs/mobile-preview.md': '小程序与 Android', 'docs/desktop.md': '桌面版支持', 'docs/enterprise.md': '企业应用与 AI', 'docs/ai-native.md': '关于 AI Native', 'docs/quick-start.md': '快速入门', 'docs/model-and-resource-access.md': '模型与资源接入', 'docs/faq.md': '常见问题', 'docs/roadmap.md': '路线图', 'CONTRIBUTING.md': '反馈与贡献', 'docs/README.md': '全部文档' };
+const labels = { 'README.md': '产品概览', 'docs/architecture.md': '整体架构', 'docs/features.md': '功能全景', 'docs/showcase.md': '核心功能 UI', 'docs/mobile-preview.md': '小程序与 Android', 'docs/desktop.md': '桌面版支持', 'docs/enterprise.md': '企业应用与 AI', 'docs/ai-native.md': '关于 AI Native', 'docs/quick-start.md': '快速入门', 'docs/model-and-resource-access.md': '模型与资源接入', 'docs/wechat-miniapp-configuration.md': '小程序配置', 'docs/faq.md': '常见问题', 'docs/roadmap.md': '路线图', 'CONTRIBUTING.md': '反馈与贡献', 'docs/README.md': '全部文档' };
 
 export function renderPage({contentHtml, page, pages}) {
   const items = new Map(pages.map(item => [item.sourcePath, item]));
